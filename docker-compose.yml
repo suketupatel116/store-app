@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0.33
+    restart: always
+    environment:
+      MYSQL_DATABASE: storedb
+      MYSQL_USER: root
+      MYSQL_ROOT: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33061:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "-u root", "-p root", "ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 1
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/user/src/app
+    depends_on:
+      - backend

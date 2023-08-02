@@ -1,0 +1,54 @@
+.resume {
+  font-family: Times New Roman, sans-serif;
+  margin: 25px 250px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+}
+
+.contact li {
+  margin-bottom: 5px;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.summary h3 {
+  font-size: 18px;
+}
+
+.education {
+  margin-bottom: 20px;
+}
+
+.education h3 {
+  font-size: 18px;
+}
+
+.experience {
+  margin-bottom: 20px;
+}
+
+.experience h3 {
+  font-size: 18px;
+}

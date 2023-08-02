@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #87CEEB, #4682B4); /* Customize the background gradient as per your preference */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+}
+
+p {
+  color: white;
+  font-size: 24px;
+}
